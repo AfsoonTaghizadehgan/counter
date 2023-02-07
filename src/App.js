@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
+//simple counter application with useState as the Hook
 function App() {
+
+  const [counter, setCounter]= React.useState(0)
+
+  //Decrease function
+  function Subtract(){
+    setCounter(prevCounter => prevCounter - 1)
+  }
+
+  //Increase Function
+  function Add(){
+    setCounter(prevCounter => prevCounter + 1)
+  } 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="button subtract" onClick={Subtract}>-</button>
+      <h1 className="count">{counter}</h1>
+      <button className="button add" onClick={Add}>+</button>
     </div>
   );
 }
