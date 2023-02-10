@@ -1,4 +1,5 @@
 import './App.css';
+import Count from './Components/Count.js'
 import React from 'react';
 
 //simple counter application with useState as the Hook
@@ -18,7 +19,8 @@ function App() {
   return (
     <div className="App">
       <button className="button subtract" onClick={Subtract}>-</button>
-      <h1 className="count">{counter}</h1>
+      <Count 
+      count={counter}/>
       <button className="button add" onClick={Add}>+</button>
     </div>
   );
